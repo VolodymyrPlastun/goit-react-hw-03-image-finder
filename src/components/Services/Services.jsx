@@ -8,10 +8,10 @@ const fetchImages = async (imageName, page) => {
     return response.data.hits;
 }
 
-// fetchImages.propTypes = {
-//     imageName: PropTypes.string.isRequired,
-//     page: PropTypes.number.isRequired,
-// }
+fetchImages.propTypes = {
+    imageName: PropTypes.string.isRequired,
+    page: PropTypes.number.isRequired,
+}
 
 export {
     fetchImages

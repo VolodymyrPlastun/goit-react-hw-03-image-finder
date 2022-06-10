@@ -7,10 +7,10 @@ import {PropTypes} from 'prop-types';
 const modalRoot = document.querySelector('#modal-root');
 
 class Modal extends Component {
-//        static propTypes = {
-//        onClose: PropTypes.func.isRequired,
-//        children: PropTypes.node.isRequired,
-// }
+       static propTypes = {
+       onClose: PropTypes.func.isRequired,
+       children: PropTypes.node.isRequired,
+}
 
        componentDidMount() {
               window.addEventListener('keydown', this.handleKeyDown);

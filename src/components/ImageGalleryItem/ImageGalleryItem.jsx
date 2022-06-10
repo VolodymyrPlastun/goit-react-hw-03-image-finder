@@ -18,11 +18,9 @@ const ImageGalleryItem = ({ onBigImgClick, gallery }) => (
          
 // )
 
-// ImageGalleryItem.propTypes = {
-//   image: PropTypes.string.isRequired,
-//   tags: PropTypes.string.isRequired,
-//   onClick: PropTypes.func.isRequired,
-//   bigImg: PropTypes.string.isRequired
-// }
+ImageGalleryItem.propTypes = {
+  gallery: PropTypes.array.isRequired,
+  onBigImgClick: PropTypes.func.isRequired,
+}
 
 export default ImageGalleryItem;

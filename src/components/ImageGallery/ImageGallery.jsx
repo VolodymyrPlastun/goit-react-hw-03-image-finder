@@ -13,9 +13,8 @@ const ImageGallery = ({children}) => {
     )
 }
 
-// ImageGallery.propTypes = {
-//     gallery: PropTypes.array.isRequired,
-//     onBigImgClick: PropTypes.func.isRequired,
-// }
+ImageGallery.propTypes = {
+    children: PropTypes.node.isRequired,
+}
 
 export default ImageGallery;
