@@ -1,5 +1,5 @@
 import axios from "axios";
-import PropTypes from 'prop-types';
+import {PropTypes} from 'prop-types';
 
 const API_KEY = '26678014-2cea77333fe97e3b1fabd9511';
 
@@ -8,10 +8,10 @@ const fetchImages = async (imageName, page) => {
     return response.data.hits;
 }
 
-fetchImages.propTypes = {
-    imageName: PropTypes.string.isRequired,
-    page: PropTypes.number.isRequired,
-}
+// fetchImages.propTypes = {
+//     imageName: PropTypes.string.isRequired,
+//     page: PropTypes.number.isRequired,
+// }
 
 export {
     fetchImages
