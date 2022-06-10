@@ -39,7 +39,8 @@ class App extends Component {
   }
 
     formSubmit = imageName => {
-this.setState({imageName, gallery: [], page: 1})
+      this.setState({ imageName, gallery: [], page: 1 })
+      scroll.scrollToTop();
   }
 
   async searchImages() {
