@@ -12,7 +12,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import s from './App.module.css';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-// import { animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 
 
 class App extends Component {
@@ -32,6 +32,10 @@ class App extends Component {
       
       this.searchImages();
     }
+    if (page > 1) {
+      scroll.scrollToBottom();
+    }
+    
   }
 
     formSubmit = imageName => {
@@ -60,7 +64,6 @@ this.setState({imageName, gallery: [], page: 1})
            } catch (error) {
       this.setState({ error });
     }
-// scroll.scrollToBottom();
   }
   
   showMoreImg =() => {
