@@ -29,10 +29,9 @@ class App extends Component {
   componentDidUpdate(prevProps, prevState) {
     const { imageName, page } = this.state;
     if (prevState.imageName !== imageName || prevState.page !== page) {
-      
       this.searchImages();
     }
-    if (page > 1) {
+    if (page !== prevState.page && page !== 1) {
       scroll.scrollToBottom();
     }
     
@@ -65,13 +64,14 @@ class App extends Component {
            } catch (error) {
       this.setState({ error });
     }
+    
   }
   
-  showMoreImg =() => {
+  showMoreImg = () => {
     this.setState(prevState => ({
       page: prevState.page + 1,
     }))
-    
+    // scroll.scrollToBottom();
   }
         
   toggleModal = () => {
@@ -83,6 +83,7 @@ class App extends Component {
   onBigImgClick = (url) => {
 this.toggleModal();
     this.setState({ bigImg: url });
+    
   }
 
 
@@ -102,7 +103,7 @@ this.toggleModal();
         
         {gallery.length > 0 && <Button moreImages={this.showMoreImg} />}
         {showModal && <Modal onClose={this.toggleModal}>
-          <img src={bigImg} alt={imageName} />
+          <img className={s.bigImage} src={bigImg} alt={imageName} />
         </Modal>}
         <ToastContainer autoClose={3000}/>
       </div> 
